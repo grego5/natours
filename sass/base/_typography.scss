@@ -1,0 +1,27 @@
+body {
+   font-family: 'Lato', Arial, Helvetica, sans-serif;
+   font-weight: 400;
+   line-height: 1.7;
+   color: $color-grey-dark;
+   padding: 30px;
+}
+
+.heading-main {
+   color: $color-light;
+   text-transform: uppercase;
+   backface-visibility: hidden; /* remove transition shaking */
+   margin-bottom: 2rem;
+
+   &--top {
+      font-size: 3.75rem;
+      letter-spacing: 3.5rem;
+      animation: fadein-right 0.8s backwards ease-out;
+   }
+
+   &--sub {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 1.7rem;
+      animation: fadein-left 0.8s backwards ease-out;
+   }
+}
