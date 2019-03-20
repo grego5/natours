@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "advanced css and scss course project",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grego5/natours.git"
+  },
+  "author": "grego5",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grego5/natours/issues"
+  },
+  "homepage": "https://github.com/grego5/natours#readme",
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
