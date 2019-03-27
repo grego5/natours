@@ -42,10 +42,19 @@
 
    &--white {
       background-color: $color-light;
-      color: $color-grey-dark;
+      color: $color-grey-5;
 
       &::after {
          background-color: $color-light;
+      }
+   }
+
+   &--primary {
+      background-color: $color-primary;
+      color: $color-light;
+
+      &::after {
+         background-color: $color-primary;
       }
    }
    
