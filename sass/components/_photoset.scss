@@ -4,7 +4,7 @@
    &__img {
       width: 55%;
       box-shadow: 0 1.5rem 4rem rgba($color-dark, .4);
-      border-radius: 2px;
+      border-radius: $border-radius-box;
       position: absolute;
       transition: transform 0.2s;
       outline-offset: 2rem;
