@@ -5,3 +5,10 @@
       display: table;
    }
 }
+
+@mixin position-middle($y: 50%) {
+   position: absolute;
+   top: $y;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}

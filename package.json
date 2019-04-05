@@ -4,7 +4,9 @@
   "description": "advanced css and scss course project",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "watch:live": "node server.js",
+    "start": "concurrently \"npm:watch:*\""
   },
   "repository": {
     "type": "git",
