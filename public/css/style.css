@@ -196,7 +196,7 @@ body {
 .navigation__checkbox {
   display: none; }
 
-.navigation__button {
+.navigation__toggle {
   position: fixed;
   top: 6rem;
   right: 6rem;
@@ -204,7 +204,45 @@ body {
   width: 7rem;
   border-radius: 50%;
   background-color: #fff;
-  z-index: 102; }
+  z-index: 102;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  cursor: pointer; }
+
+.navigation__burger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .navigation__burger, .navigation__burger::before, .navigation__burger::after {
+    width: 3rem;
+    height: 2px;
+    background-color: #333;
+    display: inline-block; }
+  .navigation__burger::before, .navigation__burger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: transform .1s;
+    transform-origin: center; }
+  .navigation__burger::before {
+    top: -0.8rem; }
+  .navigation__burger::after {
+    top: 0.8rem; }
+
+.navigation__toggle:hover > .navigation__burger::before {
+  transform: translateY(-0.2rem); }
+
+.navigation__toggle:hover > .navigation__burger::after {
+  transform: translateY(0.2rem); }
+
+.navigation[data-state="open"] .navigation__burger {
+  background-color: transparent; }
+
+.navigation[data-state="open"] .navigation__burger::before {
+  transform: translateY(0.8rem) rotate(135deg); }
+
+.navigation[data-state="open"] .navigation__burger::after {
+  transform: translateY(-0.8rem) rotate(-135deg); }
 
 .navigation__background {
   position: fixed;
@@ -214,16 +252,19 @@ body {
   width: 6rem;
   border-radius: 50%;
   background-image: radial-gradient(#7ed56f, #28b485);
-  z-index: 100; }
+  z-index: 100;
+  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1); }
 
 .navigation__nav {
   position: fixed;
   height: 100vh;
-  width: 0;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: 101;
-  opacity: 0; }
+  opacity: 0;
+  transition: opacity .4s linear;
+  pointer-events: none; }
 
 .navigation__list {
   position: absolute;
@@ -254,11 +295,11 @@ body {
   background-position: 100%;
   transform: translateX(1rem); }
 
-.navigation__checkbox:checked ~ .navigation__nav {
+.navigation[data-state="open"] > .navigation__nav {
   opacity: 1;
-  width: 100%; }
+  pointer-events: auto; }
 
-.navigation__checkbox:checked ~ .navigation__background {
+.navigation[data-state="open"] > .navigation__background {
   transform: scale(80); }
 
 .section-about {
