@@ -1,1 +1,1 @@
-Udemy advanced css and sass course, first code along exercise project. Work in progress.
+Udemy advanced css and sass course, code along project.
