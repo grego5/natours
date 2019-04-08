@@ -3,10 +3,16 @@ var toggleState = function (elem, one, two) {
 };
 
 (function() {
-   var btn = document.querySelector('.navigation__toggle');
-   var nav = document.querySelector('.navigation');
-   
-   btn.addEventListener('click',
-      toggleState.bind(null, nav, 'closed', 'open'), false
-   );
+   // select all buttons that should change the element state
+   var buttons = document.querySelectorAll('[data-popup]');
+
+   // spread the object into array and iterate
+   [].slice.call(buttons).forEach(function(btn) {
+      // select the element id which state should be changed by clicking the button
+      var popup = document.querySelector(`#${btn.dataset.popup}`)
+      btn.addEventListener('click',
+         toggleState.bind(null, popup, 'closed', 'open'), false
+      );
+   })
+
 }());

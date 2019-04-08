@@ -14,22 +14,22 @@
     </head>
     <body>
 
-        <div class="navigation" data-state="closed">
-            <div class="navigation__toggle">
+        <div class="navigation" data-state="closed" id="navigation">
+            <div class="navigation__toggle" data-popup="navigation">
                 <div class="navigation__burger"></div>
             </div>
 
             <div class="navigation__background"></div>
 
-            <div class="navigation__nav">
+            <nav class="navigation__nav" data-popup="navigation">
                 <ul class="navigation__list">
-                    <li class="navigation__item"><a href="#" class="navigation__link">About Natours</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">Your benefits</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">Popular tours</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">Stories</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">Book now</a></li>
+                    <li class="navigation__item"><a href="#section-about" class="navigation__link">About Natours</a></li>
+                    <li class="navigation__item"><a href="#section-features" class="navigation__link">Your benefits</a></li>
+                    <li class="navigation__item"><a href="#section-tours" class="navigation__link">Popular tours</a></li>
+                    <li class="navigation__item"><a href="#section-stories" class="navigation__link">Stories</a></li>
+                    <li class="navigation__item"><a href="#section-book" class="navigation__link">Book now</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
 
         <header class="header">
@@ -47,7 +47,7 @@
         </header>
 
         <main>
-            <section class="section-about">
+            <section class="section-about" id="section-about">
                 <div class="text-center mb-lg">
                     <h2 class="heading-secondary">
                         Exciting tours for adventurous people
@@ -81,7 +81,7 @@
                 </div>
             </section>
 
-            <section class="section-features">
+            <section class="section-features" id="section-features">
                 <div class="row">
                     <div class="col-1-4">
                         <div class="feature-box">
@@ -122,7 +122,7 @@
                 </div>
             </section>
 
-            <section class="section-tours">
+            <section class="section-tours" id="section-tours">
                 <div class="text-center mb-lg">
                     <h2 class="heading-secondary">
                         Most popular tours
@@ -155,7 +155,7 @@
                                         <p class="card__price-text">Only</p>
                                         <p class="card__price-value">$299</p>
                                     </div>
-                                    <a href="#" class="btn btn--white">Book now!</a>
+                                    <button class="btn btn--white" data-popup="modal">Book now!</button>
                                 </div>
                             </div>
                         </div>
@@ -185,7 +185,7 @@
                                         <p class="card__price-text">Only</p>
                                         <p class="card__price-value">$399</p>
                                     </div>
-                                    <a href="https://gregos.app" class="btn btn--white">Book now!</a>
+                                    <button class="btn btn--white" data-popup="modal">Book now!</button>
                                 </div>
                             </div>
                         </div>
@@ -215,7 +215,7 @@
                                         <p class="card__price-text">Only</p>
                                         <p class="card__price-value">$499</p>
                                     </div>
-                                    <a href="#" class="btn btn--white">Book now!</a>
+                                    <button class="btn btn--white" data-popup="modal">Book now!</button>
                                 </div>
                             </div>
                         </div>
@@ -227,7 +227,7 @@
                 </div>
             </section>
 
-            <section class="section-stories">
+            <section class="section-stories" id="section-stories">
                 <div class="bg-video">
                     <video class="bg-video__content" autoplay muted loop>
                         <source src="img/video.mp4" type="video/mp4">
@@ -285,7 +285,7 @@
                 </div>
             </section>
 
-            <section class="section-book">
+            <section class="section-book" id="section-book">
                 <div class="row">
                     <div class="book">
                         <div class="book__form">
@@ -353,6 +353,41 @@
                 
             </div>
         </footer>
+
+        <div class="modal" id="modal" data-state="closed">
+            <div class="modal__content">
+                <div class="modal__left">
+                    <img src="img/nat-8.jpg" alt="Tour photo" class="modal__image">
+                    <img src="img/nat-9.jpg" alt="Tour photo" class="modal__image">
+                </div>
+                
+                <div class="modal__right">
+                    <div class="text-center mb-sm">
+                        <h2 class="heading-secondary">
+                            Start booking now
+                        </h2>
+
+                        <h3 class="heading-tertiary">
+                            important &ndash; please read the terms and conditions first
+                        </h3>
+                    </div>
+
+                    <div class="modal__text mb-md">
+                        <p class="paragraph">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates dolorem, corrupti laborum quos dolores, ipsa atque illum ea qui voluptatem natus. Optio architecto, accusantium quasi recusandae saepe laboriosam facilis
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates dolorem, corrupti laborum quos dolores, ipsa atque illum ea qui voluptatem natus. Optio architecto, accusantium quasi recusandae saepe laboriosam facilis
+                        </p>
+                    </div>
+
+                    <div class="modal__close" data-popup="modal">&times;</div>
+
+                    <div class="text-center">
+                        <a href="#" class="btn btn--primary">Book now!</a>
+                    </div>
+                </div> <!-- modal__right end -->
+            </div> <!-- modal__content end -->
+        </div>
+
         <script src="js/script.js"></script>
     </body>
 </html>
