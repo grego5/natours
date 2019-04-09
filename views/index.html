@@ -21,13 +21,13 @@
 
             <div class="navigation__background"></div>
 
-            <nav class="navigation__nav" data-popup="navigation">
-                <ul class="navigation__list">
-                    <li class="navigation__item"><a href="#section-about" class="navigation__link">About Natours</a></li>
-                    <li class="navigation__item"><a href="#section-features" class="navigation__link">Your benefits</a></li>
-                    <li class="navigation__item"><a href="#section-tours" class="navigation__link">Popular tours</a></li>
-                    <li class="navigation__item"><a href="#section-stories" class="navigation__link">Stories</a></li>
-                    <li class="navigation__item"><a href="#section-book" class="navigation__link">Book now</a></li>
+            <nav class="navigation__nav">
+                <ul class="navigation__list" data-popup="navigation">
+                    <li><a href="#section-about" class="navigation__link">About Natours</a></li>
+                    <li><a href="#section-features" class="navigation__link">Your benefits</a></li>
+                    <li><a href="#section-tours" class="navigation__link">Popular tours</a></li>
+                    <li><a href="#section-stories" class="navigation__link">Stories</a></li>
+                    <li><a href="#section-book" class="navigation__link">Book now</a></li>
                 </ul>
             </nav>
         </div>
@@ -42,7 +42,7 @@
                     <div class="heading-main--top">Outdoors</div>
                     <div class="heading-main--sub">Is where life happens</div>
                 </h1>
-                <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+                <a href="#section-tours" class="btn btn--white btn--animated">Discover our tours</a>
             </div>
         </header>
 
@@ -355,6 +355,8 @@
         </footer>
 
         <div class="modal" id="modal" data-state="closed">
+            <div class="modal__background" data-popup="modal"></div>
+
             <div class="modal__content">
                 <div class="modal__left">
                     <img src="img/nat-8.jpg" alt="Tour photo" class="modal__image">

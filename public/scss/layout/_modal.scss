@@ -4,11 +4,19 @@
    left: 0;
    width: 100%; 
    height: 100%;
-   background-color: rgba($color-dark, .8);
    z-index: 200;
    opacity: 0;
    pointer-events: none;
    transition: opacity 0.2s;
+
+   &__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color-dark, .8);
+   }
 
    &__content {
       @include position-middle;
@@ -20,6 +28,7 @@
       overflow: hidden;
       transition: transform 0.3s 0.2s;
       transform: translate(-50%, -50%) scale(0);
+
    }
 
    &__left {

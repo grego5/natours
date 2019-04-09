@@ -63,7 +63,6 @@
       border-radius: 50%;
       background-image: radial-gradient($color-primary-light, $color-primary-dark);
       z-index: 100;
-      transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1);
    }
 
    &__nav {
@@ -74,7 +73,6 @@
       left: 0;
       z-index: 101;
       opacity: 0;
-      transition: opacity .4s linear;
       pointer-events: none;
    }
 
@@ -82,10 +80,6 @@
      @include position-middle;
      list-style: none;
      text-align: center;
-   }
-
-   &__item {
-      margin: 2rem;
    }
 
    &__link {
@@ -119,9 +113,11 @@
    &[data-state="open"] > &__nav {
       opacity: 1;
       pointer-events: auto;
+      transition: opacity .4s linear;
    }
 
    &[data-state="open"] > &__background {
       transform: scale(80); 
+      transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1);
    }
 }
