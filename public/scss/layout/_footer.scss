@@ -4,7 +4,7 @@
    font-size: 1.4rem;
 
    @include respond(tab-port) {
-      padding: 2rem 0;
+      padding: 4rem 0 2rem;
    }
 
    &__logo-wrapper {
@@ -25,6 +25,10 @@
       border-top: 1px solid $color-grey-5;
       padding: 2rem 0;
       text-align: center;
+
+      @include respond(tab-port) {
+         border: none;
+      }
    }
 
    &__list {
@@ -62,5 +66,20 @@
       border-top: 1px solid $color-grey-5;
       padding-top: 2rem;
       text-align: center;
+   }
+
+   &__logo {
+      &--small {
+         display: none;
+      }
+
+      @include respond(tab-port) {
+         &--small {
+            display: inline;
+         }
+         &--big {
+            display: none;
+         }
+      }
    }
 }

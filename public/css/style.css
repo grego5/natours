@@ -102,8 +102,8 @@ body {
   transition: transform .2s; }
   @media (max-width: 56.25em) {
     .heading-secondary {
-      font-size: 2.8rem;
-      letter-spacing: .5rem;
+      font-size: 5vw;
+      letter-spacing: .1vw;
       padding: 0 4rem; } }
   .heading-secondary:hover {
     transform: skew(15deg, 2deg) scale(1.1);
@@ -224,7 +224,7 @@ body {
   font-size: 1.4rem; }
   @media (max-width: 56.25em) {
     .footer {
-      padding: 2rem 0; } }
+      padding: 4rem 0 2rem; } }
   .footer__logo-wrapper {
     text-align: center;
     margin-bottom: 4rem; }
@@ -238,6 +238,9 @@ body {
     border-top: 1px solid #777;
     padding: 2rem 0;
     text-align: center; }
+    @media (max-width: 56.25em) {
+      .footer__navigation {
+        border: none; } }
   .footer__list {
     list-style: none; }
   .footer__item {
@@ -259,6 +262,13 @@ body {
     border-top: 1px solid #777;
     padding-top: 2rem;
     text-align: center; }
+  .footer__logo--small {
+    display: none; }
+  @media (max-width: 56.25em) {
+    .footer__logo--small {
+      display: inline; }
+    .footer__logo--big {
+      display: none; } }
 
 .navigation__toggle {
   position: fixed;
@@ -393,7 +403,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 90%;
     background-color: #fff;
     box-shadow: 0 2rem 4rem rgba(255, 255, 255, 0.2);
     border-radius: 3px;
@@ -404,16 +414,27 @@ body {
   .modal__left {
     width: calc(100% / 3);
     display: table-cell; }
+    @media (max-width: 75em) {
+      .modal__left {
+        display: contents; } }
   .modal__right {
     width: calc(100% / 3 * 2);
     display: table-cell;
     vertical-align: middle;
-    padding: 2rem; }
+    padding-bottom: 2rem; }
+    @media (max-width: 75em) {
+      .modal__right {
+        display: block;
+        width: 100%; } }
   .modal__image {
     display: block;
     width: 100%; }
+    @media (max-width: 75em) {
+      .modal__image {
+        display: inline-block;
+        width: 50%; } }
   .modal__text {
-    padding: 3rem 10rem;
+    padding: 3rem;
     column-count: 2;
     -moz-column-count: 2;
     column-gap: 4rem;
