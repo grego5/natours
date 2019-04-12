@@ -417,7 +417,8 @@ body {
     display: table-cell; }
     @media (max-width: 75em) {
       .modal__left {
-        display: contents; } }
+        display: flex;
+        width: 100%; } }
   .modal__right {
     width: calc(100% / 3 * 2);
     display: table-cell;
@@ -432,8 +433,8 @@ body {
     width: 100%; }
     @media (max-width: 75em) {
       .modal__image {
-        display: inline-block;
-        width: 50%; } }
+        width: 50%;
+        height: 100%; } }
   .modal__text {
     padding: 3rem;
     column-count: 2;
