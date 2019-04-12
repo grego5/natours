@@ -766,7 +766,7 @@ body {
   padding: 6rem 6rem 6rem 9rem;
   transform: skewX(-12deg);
   background: rgba(255, 255, 255, 0.6); }
-  @media (max-width: 56.25em) {
+  @media (max-width: 37.5em) {
     .story {
       transform: none;
       width: 100%;
@@ -783,7 +783,7 @@ body {
     clip-path: circle(50% at 50% 50%);
     -webkit-clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg); }
-    @media (max-width: 56.25em) {
+    @media (max-width: 37.5em) {
       .story__shape {
         transform: translateX(-3rem); } }
   .story__image {
@@ -792,7 +792,7 @@ body {
     transition: transform 0.5s; }
   .story__text {
     transform: skewX(12deg); }
-    @media (max-width: 56.25em) {
+    @media (max-width: 37.5em) {
       .story__text {
         transform: none; } }
   .story__caption {
