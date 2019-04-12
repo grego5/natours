@@ -10,7 +10,13 @@
       z-index: 102;
       box-shadow: 0 1rem 3rem rgba($color-dark, .1);
       cursor: pointer;
+
+      @include respond(tab-port) {
+         top: 4rem;
+         right: 4rem;
+      }
    }
+
 
    &__burger {
       @include position-middle;
@@ -63,6 +69,11 @@
       border-radius: 50%;
       background-image: radial-gradient($color-primary-light, $color-primary-dark);
       z-index: 100;
+
+      @include respond(tab-port) {
+         top: 4.5rem;
+         right: 4.5rem;
+      }
    }
 
    &__nav {

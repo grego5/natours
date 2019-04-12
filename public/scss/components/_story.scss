@@ -7,6 +7,13 @@
    transform: skewX(-12deg);
    background: rgba(255, 255, 255, 0.6);
 
+   @include respond(tab-port) {
+      transform: none;
+      width: 100%;
+      padding: 4rem 4rem 2rem 5rem;
+      max-width: 40rem;
+   }
+
    &__shape {
       position: relative;
       width: 15rem; //required
@@ -20,7 +27,11 @@
       clip-path: circle(50% at 50% 50%);
       -webkit-clip-path: circle(50% at 50% 50%);
 
-      transform: translateX(-3rem) skewX(12deg); 
+      transform: translateX(-3rem) skewX(12deg);
+      
+      @include respond(tab-port) {
+         transform: translateX(-3rem);
+      }
    }
 
    &__image {
@@ -32,6 +43,10 @@
 
    &__text {
       transform: skewX(12deg);
+
+      @include respond(tab-port) {
+         transform: none;
+      }
    }
 
    &__caption {

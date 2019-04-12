@@ -3,6 +3,13 @@
    -moz-perspective: 150rem;
    position: relative;
    height: 50rem;
+   max-width: 65rem;
+   margin: 0 auto;
+
+   @include respond(tab-port) {
+      height: 100%;
+      box-shadow: 0 1.5rem 2rem rgba($color-dark, .2);
+   }
 
    &__side {
       font-size: 2rem;
@@ -14,7 +21,7 @@
       width: 100%;
       backface-visibility: hidden;
       border-radius: $border-radius-box;
-      box-shadow: 0 1.5rem 4rem rgba($color-dark, .15);
+      box-shadow: 0 1.5rem 4rem rgba($color-dark, .2);
       overflow: hidden;
 
       &--front {
@@ -34,20 +41,42 @@
             background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
          }
       }
+
+      @include respond(tab-port) {
+         position: unset;
+         height: auto;
+         padding: 5rem 0;
+         box-shadow: none;
+         transition: none;
+
+         &--back {
+            margin-top: -5rem;
+            transform: none;
+            clip-path: polygon(0% 5rem, 100% 0%, 100% 100%, 0 100%);
+         }
+      }
    }
- 
+   
    &:hover &__side--front {
       transform: rotateY(-180deg);
+
+      @include respond(tab-port) {
+         transform:none;
+      }
    }
    &:hover &__side--back {
       transform: rotateY(0);
+
+      @include respond(tab-port) {
+         transform:none;
+      }
    }
 
    &__picture {
       background-size: cover;
       height: 23rem;
       background-blend-mode: screen;
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 18rem, 0 100%);
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
 
@@ -130,20 +159,33 @@
       @include position-middle;
       width: 100%;
       text-align: center;
+
+      @include respond(tab-port) {
+         position: unset;
+         transform: none;
+      }
    }
 
    &__price-box {
       color: $color-light;
-      margin-bottom: 8rem;
    }
 
    &__price-text {
       font-size: 1.4rem;
       text-transform: uppercase;
+
+      @include respond(tab-port) {
+         display: inline;
+      }
    }
 
    &__price-value {
       font-size: 6rem;
       font-weight: 300;
+
+      @include respond(tab-port) {
+         font-size: 4rem;
+         display: inline;
+      }
    }
 }

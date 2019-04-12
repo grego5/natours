@@ -9,6 +9,13 @@
       transition: transform 0.2s;
       outline-offset: 2rem;
 
+      @include respond(tab-port) {
+         box-shadow: 0 1.5rem 2rem rgba($color-dark, .2);
+         width: calc(100% / 3 - 2px);
+         display: inline-block;
+         position: unset;
+      }
+
       &--1 {
          left: 0;
          top: -2rem;
@@ -16,6 +23,10 @@
       &--2 {
          right: 0;
          top: 2rem;
+
+         @include respond(tab-port) {
+            transform: scale(1.2)
+         }
       }
       &--3 {
          left: 20%;
@@ -23,10 +34,16 @@
       }
 
       &:hover {
-         transform: scale(1.05) translateY(-0.5rem);
+         transform: translateY(-0.5rem) scale(1.05);
          box-shadow: 0 2.5rem 4rem rgba($color-dark, .5);
          z-index: 10;
          outline: 1.5rem solid $color-primary;
+
+         @include respond(tab-port) {
+            transform: none;
+            outline: none;
+            box-shadow: 0 1.5rem 2rem rgba($color-dark, .2);
+         }
       }
 
    }

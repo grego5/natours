@@ -3,6 +3,12 @@
    &__input-group:not(:last-child) {
       margin-bottom: 2rem;
    }
+   
+   @include respond(tab-port) {
+      &__input-group:last-child {
+         text-align: center;  
+      }
+   }
 
    &__input {
       font-family: inherit;
@@ -13,8 +19,12 @@
       background-color: rgba($color-light, .5);
       border: none;
       border-bottom: 3px solid transparent;
-      width: 100%;
+      width: 80%;
       display: block;
+
+      @include respond(tab-port) {
+         width: 100%;
+      }
 
       &::-webkit-input-placeholder {
          color: $color-grey-4;
@@ -52,8 +62,12 @@
    }
 
    &__radio-group {
-      width: calc(50% - 2px);
+      width: 45%;
       display: inline-block;
+
+      @include respond(tab-port) {
+         text-align: center;
+      }
    }
 
    &__radio-label {

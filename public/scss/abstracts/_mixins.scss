@@ -12,3 +12,25 @@
    left: 50%;
    transform: translate(-50%, -50%);
 }
+
+/* 
+   responsive breakpoints manager
+   phone: 600px;
+   tablet-portrait (tab-port): 900px;
+   tablet-landscape (tab-land): 1200px;
+   big-desktop (big-desk): 1800px;
+*/
+@mixin respond($bp) {
+   @if $bp == phone {
+      @media (max-width: 37.5em) { @content };
+   }
+   @if $bp == tab-port {
+      @media (max-width: 56.25em) { @content };
+   }
+   @if $bp == tab-land {
+      @media (max-width: 75em) { @content };
+   }
+   @if $bp == big-desk {
+      @media (min-width: 112.5em) { @content };
+   }
+}
