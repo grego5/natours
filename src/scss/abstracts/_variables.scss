@@ -28,3 +28,16 @@ $default-font-size: 1.6rem;
 
 //other
 $border-radius-box: 3px;
+
+/* 
+   media breakpoints
+   phone:                        37.5em  / 600px;
+   tablet-portrait (tab-port):   56.25em / 900px;
+   tablet-landscape (tab-land):  75em    / 1200px;
+   big-desktop (big-desk):       112.5em / 1800px;
+*/
+
+$phone:     37.5em;
+$tab-port:  56.25em;
+$tab-land:  75em;
+$big-desk:  112.5em;

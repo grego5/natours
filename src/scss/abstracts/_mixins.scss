@@ -1,0 +1,48 @@
+@mixin clearfix {
+   &::after {
+      content: "";
+      clear: both;
+      display: table;
+   }
+}
+
+@mixin position-middle($y: 50%) {
+   position: absolute;
+   top: $y;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+/* 
+   responsive breakpoints manager
+   phone:                        37.5em  / 600px;
+   tablet-portrait (tab-port):   56.25em / 900px;
+   tablet-landscape (tab-land):  75em    / 1200px;
+   big-desktop (big-desk):       112.5em / 1800px;
+*/
+@mixin respond($bp) {
+   @if $bp == phone {
+      @media (max-width: $phone) { @content };
+   }
+   @if $bp == tab-port {
+      @media (max-width: $tab-port) { @content };
+   }
+   @if $bp == tab-land {
+      @media (max-width: $tab-land) { @content };
+   }
+   @if $bp == big-desk {
+      @media (min-width: $big-desk) { @content };
+   }
+}
+
+@mixin retina-img($min, $max: big-desk) {
+   @media
+      only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: $min),
+      only screen and (       -moz-device-pixel-ratio: 2)      and (min-width: $min),
+      only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: $min),
+      only screen and (        min-device-pixel-ratio: 2)      and (min-width: $min),
+      only screen and (                min-resolution: 192dpi) and (min-width: $min),
+      only screen and (                min-resolution: 2dppx)  and (min-width: $min),
+      only screen and (min-width: $max)
+   { @content }
+}

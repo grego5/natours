@@ -7,14 +7,17 @@
 .section-features {
    padding: 20rem 0;
    margin-top: -20vh;
-   background-image: linear-gradient(
-      90deg, 
-      rgba($color-primary-light, 0.8), 
-      rgba($color-primary-dark, 0.8)
-   ), url("../img/nat-4.jpg");
+   @include header-bg("../img/nat-4-md.jpg");
+
+   @media only screen and (min-width: $phone) {
+      @include header-bg("../img/nat-4-lg.jpg");
+   }
+
+   @include retina-img($phone, 125em) {
+      @include header-bg("../img/nat-4-xl.jpg");
+   }
+
    background-size: cover;
-
-
    clip-path: polygon(0 11%, 100% 0, 100% 89%, 0 100%);
 }
 
@@ -39,7 +42,7 @@
       rgba($color-light, .9) 0%, 
       rgba($color-light, .9) 50%, 
       transparent 50%, 
-   ) ,url(../img/nat-10.jpg);
+   ) ,url(../img/nat-10-xl.jpg);
    background-size: cover;
 
    border-radius: $border-radius-box;
@@ -51,11 +54,23 @@
       padding: 3rem;
    }
 
-   @include respond(tab-port) {
+   @mixin book-bg($url: "../img/nat-10-md.jpg") {
       background-image: linear-gradient(to left, 
          rgba($color-light, .9) 0%, 
          rgba($color-light, .7) 100%, 
-      ) ,url(../img/nat-10.jpg);
+      ) ,url($url);
+   }
+
+   @include respond(tab-port) {
+      @include book-bg;
+
+      @media only screen and (min-width: $phone) {
+         @include book-bg("../img/nat-10-lg.jpg");
+      }
+
+      @include retina-img($phone, 125em) {
+         @include book-bg("../img/nat-10-xl.jpg");
+      }
 
       &__form {
          width: 100%;

@@ -73,9 +73,24 @@
                     </div>
                     <div class="col-1-2">
                         <div class="photoset">
-                            <img src="img/nat-1-large.jpg" alt="photo 1" class="photoset__img photoset__img--1">
-                            <img src="img/nat-2-large.jpg" alt="photo 2" class="photoset__img photoset__img--2">
-                            <img src="img/nat-3-large.jpg" alt="photo 3" class="photoset__img photoset__img--3">
+                            <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                                sizes="(max-width: 37.5em) 32vw, (max-width: 56.25em) 24vw, 350px"
+                                alt="photo 1"
+                                class="photoset__img photoset__img--1"
+                                src="img/nat-1.jpg"
+                            > 
+                            <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                                sizes="(max-width: 37.5em) 32vw, (max-width: 56.25em) 24vw, 350px"
+                                alt="photo 2"
+                                class="photoset__img photoset__img--2"
+                                src="img/nat-2.jpg"
+                            > 
+                            <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                                sizes="(max-width: 37.5em) 32vw, (max-width: 56.25em) 24vw, 350px"
+                                alt="photo 3"
+                                class="photoset__img photoset__img--3"
+                                src="img/nat-3.jpg"
+                            > 
                         </div>
                     </div>
                 </div>
@@ -245,7 +260,7 @@
                 <div class="row">
                     <div class="story">
                         <figure class="story__shape">
-                            <img src="img/nat-8.jpg" alt="story teller" class="story__image">
+                            <img src="img/nat-8-sm.jpg" alt="story teller" class="story__image">
                             <fitcaption class="story__caption">
                                 Mary Smith
                             </fitcaption>
@@ -264,7 +279,7 @@
                 <div class="row">
                     <div class="story">
                         <figure class="story__shape">
-                            <img src="img/nat-9.jpg" alt="story teller" class="story__image">
+                            <img src="img/nat-9-sm.jpg" alt="story teller" class="story__image">
                             <fitcaption class="story__caption">
                                 Smith Will
                             </fitcaption>
@@ -331,8 +346,11 @@
         
         <footer class="footer">
             <div class="footer__logo-wrapper">
-                <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo footer__logo--big">
-                <img src="img/logo-green-small-2x.png" alt="Full logo" class="footer__logo footer__logo--small">
+                <!-- responsive images: art direction with density switching -->
+                <picture class="footer__logo">
+                    <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" alt="Full logo" media="(max-width: 56.25em)">
+                    <img src="img/logo-green-1x.png" srcset="img/logo-green-2x.png 2x" alt="Full logo">
+                </picture>
             </div>
 
             <div class="row">    
@@ -360,8 +378,18 @@
 
             <div class="modal__content">
                 <div class="modal__left">
-                    <img src="img/nat-8.jpg" alt="Tour photo" class="modal__image">
-                    <img src="img/nat-9.jpg" alt="Tour photo" class="modal__image">
+                    <img srcset="img/nat-8-sm.jpg 300w, img/nat-8-md.jpg 600w, img/nat-8-lg.jpg 1200w, img/nat-8-xl.jpg 2000w"
+                        sizes="(max-width: 75em) 45vw, 30vw"
+                        alt="Tour Photo"
+                        class="modal__image"
+                        src="img/nat-8-md.jpg"
+                    > 
+                    <img srcset="img/nat-9-sm.jpg 300w, img/nat-9-md.jpg 600w, img/nat-9-lg.jpg 1200w, img/nat-9-xl.jpg 2000w"
+                        sizes="(max-width: 75em) 45vw, 30vw"
+                        alt="Tour Photo"
+                        class="modal__image"
+                        src="img/nat-9-md.jpg"
+                    > 
                 </div>
                 
                 <div class="modal__right">
