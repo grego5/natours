@@ -9,6 +9,7 @@ body {
 .heading-primary {
    color: $color-light;
    text-transform: uppercase;
+   -webkit-backface-visibility: hidden;
    backface-visibility: hidden; /* remove transition shaking */
    margin-bottom: 2rem;
 

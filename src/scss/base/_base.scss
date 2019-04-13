@@ -8,7 +8,9 @@
 
 html {
    font-size: 62.5%; // 1rem = 10px; 10/16; 1200-1800px
-   scroll-behavior: smooth;
+   @supports (scroll-behavior: smooth) {
+      scroll-behavior: smooth;
+   }
    
    @include respond(tab-land) {
       font-size: 56.25%;      // 1rem = 9px; <1200px

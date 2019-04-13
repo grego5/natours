@@ -7,7 +7,9 @@
 }
 
 .header {
-   height: 95vh;
+   height: 85vh;
+   position: relative;
+
    @include header-bg;
 
    @media only screen and (min-width: $phone) {
@@ -20,8 +22,12 @@
 
    background-size: cover;
    background-position: top;
-   clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
-   position: relative;
+   
+   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
+      height: 95vh;
+   }
 
    &__logo-wrapper {
       position: absolute;

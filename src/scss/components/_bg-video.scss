@@ -12,5 +12,10 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
+
+      // ie/edge stretch video to full size since object-fit doesn't support video
+      @supports (-ms-ime-align:auto) {
+         width: auto;
+      }
    }
 } 

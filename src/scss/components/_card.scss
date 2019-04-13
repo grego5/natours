@@ -1,11 +1,17 @@
 .card {
-   perspective: 150rem;
-   -moz-perspective: 150rem;
    position: relative;
    height: 50rem;
    max-width: 65rem;
    margin: 0 auto;
+   
+   perspective: 150rem;
+   -moz-perspective: 150rem;
+   @supports (-ms-ime-align:auto) {
+      perspective: 0; // glitching in edge
+  }
 
+   transform-style: preserve-3d;
+   
    @include respond(tab-port) {
       height: 100%;
       box-shadow: 0 1.5rem 2rem rgba($color-dark, .2);
@@ -14,11 +20,12 @@
    &__side {
       font-size: 2rem;
       height: 50rem;
-      transition: transform .5s ease;
+      transition: transform .4s;
       position: absolute;
       top:0;
       left:0;
       width: 100%;
+      -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       border-radius: $border-radius-box;
       box-shadow: 0 1.5rem 4rem rgba($color-dark, .2);
@@ -52,7 +59,10 @@
          &--back {
             margin-top: -5rem;
             transform: none;
-            clip-path: polygon(0% 5rem, 100% 0%, 100% 100%, 0 100%);
+            @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+               -webkit-clip-path: polygon(0% 5rem, 100% 0%, 100% 100%, 0 100%);
+               clip-path: polygon(0% 5rem, 100% 0%, 100% 100%, 0 100%);
+            }
          }
       }
    }
@@ -75,42 +85,47 @@
    &__picture {
       background-size: cover;
       height: 23rem;
-      background-blend-mode: screen;
-      clip-path: polygon(0 0, 100% 0, 100% 18rem, 0 100%);
+      @supports (background-blend-mode: screen) {
+         background-blend-mode: screen;
+      }
+      @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+         -webkit-clip-path: polygon(0 0, 100% 0, 100% 18rem, 0 100%);
+         clip-path: polygon(0 0, 100% 0, 100% 18rem, 0 100%);
+      }
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
 
       &--1 {
          background-image: 
-            linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+            linear-gradient(to right bottom, rgba($color-secondary-light, .8), rgba($color-secondary-dark, .8)),
             url(../img/nat-5-md.jpg);
 
 
          @include retina-img($phone, 125em) {
             background-image: 
-               linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+               linear-gradient(to right bottom, rgba($color-secondary-light, .8), rgba($color-secondary-dark, .8)),
                url(../img/nat-5-lg.jpg);
          }
       }
       &--2 {
          background-image: 
-            linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),
+            linear-gradient(to right bottom, rgba($color-primary-light, .8), rgba($color-primary-dark, .8)),
             url(../../img/nat-6-md.jpg);
 
          @include retina-img($phone, 125em) {
             background-image: 
-               linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),
+               linear-gradient(to right bottom, rgba($color-primary-light, .8), rgba($color-primary-dark, .8)),
                url(../img/nat-6-lg.jpg);
          }
       }
       &--3 {
          background-image: 
-            linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
+            linear-gradient(to right bottom, rgba($color-tertiary-light, .8), rgba($color-tertiary-dark, .8)),
             url(../../img/nat-7-md.jpg);
 
          @include retina-img($phone, 125em) {
             background-image: 
-               linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
+               linear-gradient(to right bottom, rgba($color-tertiary-light, .8), rgba($color-tertiary-dark, .8)),
                url(../img/nat-7-lg.jpg);
          }
       }
