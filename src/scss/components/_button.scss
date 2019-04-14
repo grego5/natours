@@ -10,6 +10,9 @@
       border-radius: 5rem;
       transition: transform .2s;
       position: relative;
+      -webkit-backface-visibility: hidden; //fix pushing of sibling elements during animation
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
 
       border: none;
       cursor: pointer;

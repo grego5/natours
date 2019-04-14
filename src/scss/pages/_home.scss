@@ -1,12 +1,12 @@
 .section-about {
    background-color: $color-grey-1;
-   padding: 25vh 0;
-   margin-top: -20vh;
+   padding: 15% 0;
+   margin-top: $section-margin * 2;
 }
 
 .section-features {
-   padding: 20rem 0;
-   margin-top: -20vh;
+   padding: $section-padding 0;
+   margin-top: $section-margin;
    @include header-bg("../img/nat-4-md.jpg");
 
    @media only screen and (min-width: $phone) {
@@ -18,25 +18,31 @@
    }
 
    background-size: cover;
-   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-      -webkit-clip-path: polygon(0 11%, 100% 0, 100% 89%, 0 100%);
-      clip-path: polygon(0 11%, 100% 0, 100% 89%, 0 100%);
+
+   // @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+   //    -webkit-clip-path: polygon(0 11%, 100% 0, 100% 89%, 0 100%);
+   //    clip-path: polygon(0 11%, 100% 0, 100% 89%, 0 100%);
+   // }
+
+   transform: skewY($box-skew);
+   & > .row {
+      transform: skewY($box-skew * -1);
    }
 }
 
 .section-tours {
    background-color: $color-grey-1;
-   padding: 10rem 0 10rem;
-   margin-top: -5rem;
+   padding: $section-padding 0;
+   margin-top: $section-margin;
 }
 
 .section-stories {
    position: relative;
-   padding: 10rem 0;
+   padding: $section-padding 0;
 }
 
 .section-book {
-   padding: 10rem 0;
+   padding: $section-padding 0;
    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
 }
 

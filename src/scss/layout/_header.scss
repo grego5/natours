@@ -7,32 +7,41 @@
 }
 
 .header {
-   height: 85vh;
-   position: relative;
+   height: 95vh;
+   overflow: hidden;
 
-   @include header-bg;
-
-   @media only screen and (min-width: $phone) {
-      @include header-bg("../img/hero-lg.jpg");
-   }
-
-   @include retina-img($phone, 125em) {
-      @include header-bg("../img/hero-xl.jpg");
-   }
-
-   background-size: cover;
-   background-position: top;
    
-   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-      clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
-      height: 95vh;
+   // @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+   //    clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
+   //    -webkit-clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
+   //    height: 95vh;
+   // }
+
+   &__wrapper {
+      position: relative;
+      margin-top: -5%;
+      transform: skewY($box-skew);
+      height: 100%;
+
+      @include header-bg;
+
+      @media only screen and (min-width: $phone) {
+         @include header-bg("../img/hero-lg.jpg");
+      }
+   
+      @include retina-img($phone, 125em) {
+         @include header-bg("../img/hero-xl.jpg");
+      }
+   
+      background-size: cover;
+      background-position: top;
    }
 
    &__logo-wrapper {
       position: absolute;
-      top: 4rem;
+      top: 6rem;
       left: 4rem;
+      transform: skewY($box-skew * -1);
    }
 
    &__logo {
@@ -40,7 +49,10 @@
    }
 
    &__content {
-      @include position-middle(40%);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-40%, -50%) skewY($box-skew * -1);
       text-align: center;
    }
 }

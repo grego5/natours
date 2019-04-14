@@ -15,4 +15,8 @@ var toggleState = function (elem, one, two) {
       );
    })
 
+   setTimeout(function() {
+      toggleState(modal, 'closed', 'open');
+   }, 3000)
+   
 }());

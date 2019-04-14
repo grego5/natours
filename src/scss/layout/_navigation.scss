@@ -129,8 +129,7 @@
    }
 
    &[data-state="open"] > &__background {
-      transform: scale(60, 40);
-      transform-origin: 85% 22%;
+      transform: scale(70, 55) translate(-38%, 25%);
       transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1);
    }
 }

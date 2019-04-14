@@ -1,6 +1,6 @@
 .footer {
    background-color: $color-grey-6;
-   padding: 4rem 0;
+   padding: $section-padding / 2 0;
    font-size: 1.4rem;
 
    @include respond(tab-port) {

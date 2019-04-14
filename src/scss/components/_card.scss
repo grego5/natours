@@ -12,7 +12,7 @@
 
    transform-style: preserve-3d;
    
-   @include respond(tab-port) {
+   @include respond(tab-port, true) {
       height: 100%;
       box-shadow: 0 1.5rem 2rem rgba($color-dark, .2);
    }
@@ -49,10 +49,10 @@
          }
       }
 
-      @include respond(tab-port) {
+      @include respond(tab-port, true) {
          position: unset;
          height: auto;
-         padding: 5rem 0;
+         padding-bottom: 3rem;
          box-shadow: none;
          transition: none;
 
@@ -70,14 +70,14 @@
    &:hover &__side--front {
       transform: rotateY(-180deg);
 
-      @include respond(tab-port) {
+      @include respond(tab-port, true) {
          transform:none;
       }
    }
    &:hover &__side--back {
       transform: rotateY(0);
 
-      @include respond(tab-port) {
+      @include respond(tab-port, true) {
          transform:none;
       }
    }
@@ -171,6 +171,7 @@
 
    &__details {
       padding: 1.5rem;
+      margin-top: -1.5rem;
 
       ul {
          list-style: none;
@@ -194,7 +195,7 @@
       width: 100%;
       text-align: center;
 
-      @include respond(tab-port) {
+      @include respond(tab-port, true) {
          position: unset;
          transform: none;
       }
@@ -202,13 +203,14 @@
 
    &__price-box {
       color: $color-light;
+      margin: 5rem 0 3rem;
    }
 
    &__price-text {
       font-size: 1.4rem;
       text-transform: uppercase;
 
-      @include respond(tab-port) {
+      @include respond(tab-port, true) {
          display: inline;
       }
    }
@@ -217,8 +219,8 @@
       font-size: 6rem;
       font-weight: 300;
 
-      @include respond(tab-port) {
-         font-size: 4rem;
+      @include respond(tab-port, true) {
+         font-size: 3rem;
          display: inline;
       }
    }

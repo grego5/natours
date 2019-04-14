@@ -3,14 +3,14 @@
 .mb-md { 
    margin-bottom: 4rem !important;
    
-   @include respond(tab-port) {
+   @include respond(tab-port, true) {
       margin-bottom:  3rem !important;
    }
 }
 .mb-lg { 
    margin-bottom: 8rem !important;
 
-   @include respond(tab-port) {
+   @include respond(tab-port, true) {
       margin-bottom:  4rem !important;
    }
 }
@@ -18,14 +18,14 @@
 .mt-lg { 
    margin-top: 8rem !important;
 
-   @include respond(tab-port) {
+   @include respond(tab-port, true) {
       margin-top:  5rem !important;
    }
 }
 .mt-xl { 
    margin-top: 10rem !important;
    
-   @include respond(tab-port) {
+   @include respond(tab-port, true) {
       margin-top:  8rem !important;
    }
 }

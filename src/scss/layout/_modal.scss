@@ -2,7 +2,7 @@
    position: fixed;
    top: 0;
    left: 0;
-   width: 100%; 
+   width: 100%;
    height: 100%;
    z-index: 200;
    opacity: 0;
@@ -27,35 +27,45 @@
    }
 
    &__content {
+      display: flex;
       @include position-middle;
+      transform: translate(-50%, -50%) scale(0);
       width: 90%;
       background-color: $color-light;
       box-shadow: 0 2rem 4rem rgba($color-light, .2);
       border-radius: 3px;
-      display: table;
       overflow: hidden;
       transition: transform 0.3s 0.2s;
-      transform: translate(-50%, -50%) scale(0);
+
+      @include respond(tab-land) {
+         flex-direction: column;
+      }
    }
 
    &__left {
       width: calc(100% / 3);
-      display: table-cell;
+      display: flex;
+      flex-direction: column;
 
       @include respond(tab-land) {
-         display: flex; // tried to avoid flex, but ran out of options
+         flex-direction: row;
          width: 100%;
+      }
+
+      @media only screen and (max-height: 35rem) {
+         display: none;
       }
    }
 
    &__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
       width: calc(100% / 3 * 2);
-      display: table-cell;
-      vertical-align: middle;
-      padding-bottom: 2rem;
+      padding: 2rem 0;
 
       @include respond(tab-land) {
-         display: block;
          width: 100%;
       }
    }
@@ -70,7 +80,7 @@
       }
    }
 
-   &__text {
+   &__text > .paragraph {
       padding: 3rem;
 
       column-count: 2;
@@ -81,6 +91,10 @@
 
       column-rule: 1px solid $color-grey-3;
       -moz-column-rule: 1px solid $color-grey-3;
+
+      @include respond(tab-port) {
+         column-count: auto;
+      }
    }
 
    &[data-state="open"] {
@@ -97,8 +111,8 @@
       line-height: 1;
       color: $color-grey-6;
       position: absolute;
-      top: 2.5rem;
-      right: 2.5rem;
+      top: 1rem;
+      right: 2rem;
       text-decoration: none;
       display: inline-block;
       cursor: pointer;
